@@ -1,0 +1,42 @@
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<table class="table w-50">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <th scope="row">{{ item.title }}</th>
+      <td>{{ item.content }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<nav>
+  <ul class="pagination">
+    <li
+      class="page-item"
+      [ngClass]="{'disabled': disablePrev,
+                 'cursor-pointer': !disablePrev}"
+      (click)="prevPage()"
+    >
+      <a class="page-link">Previous</a>
+    </li>
+    <li class="page-item active">
+      <a class="page-link" >{{ currentPage + 1 }}</a>
+    </li>
+    <li
+      class="page-item"
+      [ngClass]="{'disabled': disableNext,
+                 'cursor-pointer': !disableNext}"
+      (click)="nextPage()"
+    >
+      <a class="page-link">Next</a>
+    </li>
+  </ul>
+</nav>

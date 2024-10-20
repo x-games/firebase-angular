@@ -1,0 +1,34 @@
+table {
+  border-spacing: 0;
+  margin-bottom: 20px;
+
+  th, td {
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+  }
+}
+
+.pagination {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+
+  .page-item {
+    min-width: 50px;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid #c0c0c0;
+    padding: 3px;
+
+    &.active {
+      background-color: #3a9dff;
+      color: #fff
+    }
+
+    &.disabled {
+      background-color: #c0c0c0;
+    }
+  }
+}
